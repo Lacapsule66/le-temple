@@ -1,4 +1,5 @@
 "use client"
+import { Suspense } from 'react'
 import Anim from './components/Anim'
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -14,11 +15,13 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       
       <body className=" overflow-x-hidden relative bg-[#222223]">
+      <Suspense fallback={<div>Loading...</div>}>
         <Anim />
      
         <Header2 />
       {children}
       <Footer />
+      </Suspense>
       
       </body>
     </html>
