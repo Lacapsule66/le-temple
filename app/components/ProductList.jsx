@@ -11,13 +11,13 @@ gsap.registerPlugin(ScrollTrigger);
 const posts = [
   {
     color: "#cb5cff",
-    title: "Ou Mangez",
+    title: "Tacos",
     href: "manger",
     category: { name: "Restautants, fast-food, spécialitées", href: "#" },
     description:
       "Découvrez des nouveaux restaurants au quel vous n'avez jamais pensé aller. En un coup d'oeil, choisissez votre restaurant en fonction de vos envies . ",
     datetime: "2020-03-16",
-    imageUrl: "/burger.webp",
+    imageUrl: "/tacos.jpeg",
     readingTime: "6 min",
     author: {
       name: "Roel Aufderehar",
@@ -28,15 +28,15 @@ const posts = [
   },
   {
     color: "#ffe95c",
-    title: "Quoi faire",
+    title: "Burgers",
     href: "/sortir",
     category: { name: "Evénements, visites, festivitées", href: "#" },
     description:
       "Découvrez les événements, les visites, les festivitées, les activitées à faire, avez le format video, en un coup d'oeil, choisissez votre activité en fonction de vos envies . ",
     date: "Mar 10, 2020",
     datetime: "2020-03-10",
-    imageUrl: "/burger.webp",
-    readingTime: "4 min",
+    imageUrl: "/burger4.jpg",
+    readingTime: "4  min",
     author: {
       name: "Brenna Goyette",
       href: "#",
@@ -47,14 +47,14 @@ const posts = [
   {
     color: "#ff5c7d",
 
-    title: "Découvrir",
+    title: "Kebab",
     href: "/decouvrir",
     category: { name: "Randonnées, plages, rivieres...", href: "#" },
     description:
       "Envie d' un bon bol d'air frais, de nature, de verdure, de paysages, de randonnées, de plages, de rivieres, de lacs, de montagnes, de forêts, de cascades, de grottes... C'est par ici !",
     date: "Feb 12, 2020",
     datetime: "2020-02-12",
-    imageUrl: "/burger.webp",
+    imageUrl: "/kebab1.webp",
     readingTime: "11 min",
     author: {
       name: "Daniela Metz",
@@ -65,14 +65,14 @@ const posts = [
   },
   {
     color: "#a9ff5c",
-    title: "Produits locaux",
+    title: "Paninis",
     href: "/produits-locaux",
     category: { name: "Artisanat", href: "#" },
     description:
       "Découvrez les produits locaux, les artisans, les producteurs, les créateurs, les artistes, les commerçants des Pyrénées Orientales, sous un autre angle . ",
     date: "Feb 12, 2020",
     datetime: "2020-02-12",
-    imageUrl: "/burger.webp",
+    imageUrl: "/paninis.webp",
     readingTime: "11 min",
     author: {
       name: "Daniela Metz",
@@ -148,7 +148,7 @@ const ProductList = ({ conect }) => {
       <div className="relative flex h-full  justify-center items-center flex-col mx-auto">
         <div className="text-center">
           <h1 className="mt-3 heading2 staat  mx-auto text-6xl lg:text-9xl sm:mt-4">
-            Nos Burgers
+           La C<span className="rock">a</span>rte
           </h1>
         </div>
         <div
@@ -158,7 +158,7 @@ const ProductList = ({ conect }) => {
           {posts.map((post) => (
             <Link
             
-              style={{ backgroundColor: post?.color }}
+           
               onMouseEnter={() => {
                 setToggle(true), setToggle2(post.href);
               }}
@@ -168,10 +168,13 @@ const ProductList = ({ conect }) => {
               href={post.href}
               key={post.href}
               id={chooseId(post.href)}
-              className="flex min-h-[35vh] card    bg-white flex-col hover:scale-125 rounded-xl shadow-lg "
+              className="flex min-h-[35vh] card     flex-col hover:scale-125 rounded-xl shadow-lg "
             >
               <div className="flex-shrink-0 h-full relative ">
                 <div className="h-full w-full  rounded-xl relative">
+                <div className="absolute top-0 z-20 left-[50%] trans">
+                  <p className=" text-[#ff5c7d] text-6xl  rock">{post.title}</p>
+                </div>
                   <Image
                     width={500}
                     height={500}

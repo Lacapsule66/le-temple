@@ -38,3 +38,6 @@
     transition: 0.5s;
    
   }
+.trans{
+  transform: translate( -50% , -30% );
+}
